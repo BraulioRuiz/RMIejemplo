@@ -25,10 +25,13 @@ public class Cliente {
         try{
             Registry registro = LocateRegistry.getRegistry("127.0.0.1",7777);
             InterfasRMI interfaz = (InterfasRMI) registro.lookup("RemotoRMI");            
-            int nombre;
+            int[] nombre = new int[7];
             Scanner sc = new Scanner(System.in);
-            nombre = sc.nextInt();
-            System.out.println(interfaz.calcularFrecuenciaCarMax(nombre));
+            for(int i=0;i<nombre.length;i++){
+               nombre[i] = sc.nextInt();
+            }
+            
+            System.out.println(interfaz.crearGrafica(nombre));
         }catch(NotBoundException | RemoteException e){
             System.out.println(e);
         }

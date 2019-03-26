@@ -13,7 +13,6 @@ import java.rmi.RemoteException;
  * @author ayax9
  */
 public interface InterfasRMI extends Remote {
-    public int calcularFrecuenciaCarMax(int edad) throws RemoteException;
-    
+    public String crearGrafica(int[] datos) throws RemoteException;
     
 }
